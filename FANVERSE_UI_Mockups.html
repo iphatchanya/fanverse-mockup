@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FANVERSE — UI Mockups (ทุกหน้า)</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2B2140; --ink-soft:#5B4E77; --base:#FBF9FE; --card:#FFFFFF;
+  --pink:#F0459C; --violet:#7C3AED; --deep:#5B21B6;
+  --grad:linear-gradient(90deg,#F0459C 0%,#7C3AED 100%);
+  --grad-soft:linear-gradient(135deg,#FDEFF7 0%,#F1EAFE 100%);
+  --line:#EDE7F8; --mint:#0FA47A; --mint-bg:#E8F8F2;
+  --amber:#D97706; --amber-bg:#FEF3E2; --red:#DC2626; --red-bg:#FDECEC;
+  --blue:#2563EB; --blue-bg:#EAF1FE;
+  --r:14px; --sh:0 2px 10px rgba(43,33,64,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Sarabun',sans-serif;background:#231B33;color:var(--ink);padding:20px}
+h1,h2,h3,h4,.f-logo,.btn,.tab,.chip,.stat-n{font-family:'Prompt',sans-serif}
+
+/* ===== switcher (meta UI) ===== */
+.switch-wrap{max-width:1160px;margin:0 auto 14px}
+.switch-title{color:#CBBFE8;font-family:'Prompt';font-size:14px;margin-bottom:8px;letter-spacing:.3px}
+.switch-title b{color:#fff;font-size:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tab{border:1px solid #4A3D68;background:#2E2447;color:#CBBFE8;border-radius:99px;padding:7px 13px;font-size:12.5px;cursor:pointer;font-weight:500}
+.tab:hover{background:#3A2D57;color:#fff}
+.tab.on{background:var(--grad);border-color:transparent;color:#fff;font-weight:600}
+.tab:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* ===== browser frame ===== */
+.frame{max-width:1160px;margin:0 auto;background:var(--base);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.chrome{background:#EFEAF9;padding:9px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+.dot{width:11px;height:11px;border-radius:50%}
+.url{flex:1;background:#fff;border-radius:8px;padding:5px 12px;font-size:12px;color:var(--ink-soft);border:1px solid var(--line)}
+
+/* ===== product navbar ===== */
+.nav{background:#fff;border-bottom:1px solid var(--line);padding:0 26px;display:flex;align-items:center;gap:22px;height:60px}
+.f-logo{font-weight:800;font-size:21px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:.5px;white-space:nowrap}
+.f-logo span{font-size:13px}
+.nav a{font-family:'Prompt';font-size:13px;color:var(--ink-soft);text-decoration:none;font-weight:500;white-space:nowrap}
+.nav a.act{color:var(--violet);font-weight:600;border-bottom:2.5px solid var(--violet);padding:19px 0}
+.nav .sp{flex:1}
+.avatar{width:32px;height:32px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-family:'Prompt';font-weight:600}
+.bell{position:relative;font-size:17px}
+.bell i{position:absolute;top:-4px;right:-6px;background:var(--pink);color:#fff;font-style:normal;font-size:9px;border-radius:99px;padding:1px 4px;font-family:'Prompt'}
+
+.page{padding:26px 26px 34px;min-height:640px}
+.screen{display:none}.screen.on{display:block}
+
+/* ===== shared ===== */
+.btn{display:inline-flex;align-items:center;gap:6px;border:none;border-radius:10px;padding:10px 18px;font-size:13.5px;font-weight:600;cursor:pointer}
+.btn-p{background:var(--grad);color:#fff}
+.btn-o{background:#fff;color:var(--violet);border:1.5px solid var(--violet)}
+.btn-g{background:#F3F0FA;color:var(--ink-soft)}
+.btn-mint{background:var(--mint);color:#fff}
+.btn-sm{padding:7px 13px;font-size:12.5px;border-radius:8px}
+.chip{display:inline-block;border-radius:99px;padding:6px 14px;font-size:12.5px;font-weight:500;background:#fff;border:1px solid var(--line);color:var(--ink-soft)}
+.chip.on{background:var(--grad);color:#fff;border-color:transparent}
+.badge{display:inline-block;border-radius:6px;padding:3px 9px;font-size:11px;font-weight:600;font-family:'Prompt'}
+.b-mint{background:var(--mint-bg);color:var(--mint)} .b-amber{background:var(--amber-bg);color:var(--amber)}
+.b-red{background:var(--red-bg);color:var(--red)} .b-blue{background:var(--blue-bg);color:var(--blue)}
+.b-vio{background:#F1EAFE;color:var(--deep)} .b-pink{background:#FDEFF7;color:var(--pink)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin:26px 0 14px}
+.sec-h h3{font-size:17px;font-weight:600}
+.sec-h a{font-size:12.5px;color:var(--violet);text-decoration:none;font-family:'Prompt';font-weight:500}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.thumb{height:130px;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center;font-size:38px;position:relative}
+.t1{background:linear-gradient(135deg,#FCE1F0,#EFD9FF)} .t2{background:linear-gradient(135deg,#DDEBFF,#EBDDFF)}
+.t3{background:linear-gradient(135deg,#FFF0DC,#FFDDE9)} .t4{background:linear-gradient(135deg,#DFF7EE,#DDEBFF)}
+.thumb .tag{position:absolute;top:8px;left:8px}
+.p-body{padding:12px 14px 14px}
+.p-name{font-size:13.5px;font-weight:600;line-height:1.45;height:38px;overflow:hidden}
+.p-sub{font-size:11.5px;color:var(--ink-soft);margin:3px 0 7px}
+.p-price{font-family:'Prompt';font-weight:700;font-size:16px;color:var(--pink)}
+.p-price small{font-size:11px;color:var(--ink-soft);font-weight:400;font-family:'Sarabun'}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:12.5px;font-weight:600;font-family:'Prompt';margin-bottom:6px;color:var(--ink)}
+.inp{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;font-size:13.5px;font-family:'Sarabun';color:var(--ink);background:#fff}
+.inp::placeholder{color:#B8AED0}
+.note{font-size:11.5px;color:var(--ink-soft);margin-top:5px}
+.hr{border:none;border-top:1px dashed var(--line);margin:14px 0}
+.row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0}
+.row b{font-family:'Prompt'}
+.opt{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:11px 13px;margin-bottom:9px;font-size:13px;cursor:pointer;background:#fff}
+.opt.on{border-color:var(--violet);background:#F8F5FF;box-shadow:0 0 0 1px var(--violet)}
+.radio{width:16px;height:16px;border-radius:50%;border:2px solid #C9BCE6;flex:none}
+.opt.on .radio{border:5px solid var(--violet)}
+.opt .fee{margin-left:auto;font-family:'Prompt';font-weight:600;font-size:12px}
+.alert{border-radius:10px;padding:11px 14px;font-size:12.5px;line-height:1.55;display:flex;gap:9px}
+.a-red{background:var(--red-bg);color:#8C1D1D;border:1px solid #F5C6C6}
+.a-blue{background:var(--blue-bg);color:#1B3F86;border:1px solid #C9DBF7}
+.a-mint{background:var(--mint-bg);color:#0B6E52;border:1px solid #BCE8D8}
+.a-amber{background:var(--amber-bg);color:#8A4B04;border:1px solid #F4D8AC}
+
+/* route timeline (signature) */
+.route{display:flex;align-items:flex-start;position:relative;margin:26px 4px 8px}
+.route::before{content:"";position:absolute;top:13px;left:4%;right:4%;border-top:2.5px dashed #D9CCF3;z-index:0}
+.route .fill{position:absolute;top:13px;left:4%;width:52%;border-top:2.5px solid;border-image:linear-gradient(90deg,#F0459C,#7C3AED) 1;z-index:1}
+.stop{flex:1;text-align:center;position:relative;z-index:2}
+.stop .pt{width:26px;height:26px;border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:12px;background:#fff;border:2.5px solid #D9CCF3;color:#B8AED0}
+.stop.done .pt{background:var(--grad);border-color:transparent;color:#fff}
+.stop.cur .pt{background:#fff;border-color:var(--pink);color:var(--pink);box-shadow:0 0 0 5px #FDE4F1}
+.stop .lb{font-size:11.5px;font-weight:600;font-family:'Prompt';line-height:1.35}
+.stop .dt{font-size:10.5px;color:var(--ink-soft);margin-top:2px}
+.stop.wait .lb{color:#B8AED0}
+
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:18px}
+.stat{padding:16px 18px;text-align:left}
+.stat-n{font-size:22px;font-weight:700;color:var(--deep)}
+.stat-l{font-size:12px;color:var(--ink-soft)}
+.tbl{width:100%;border-collapse:collapse;font-size:12.8px}
+.tbl th{font-family:'Prompt';font-size:11.5px;text-align:left;color:var(--ink-soft);padding:9px 12px;border-bottom:1.5px solid var(--line);font-weight:600}
+.tbl td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+.countdown{display:flex;gap:7px}
+.cd{background:var(--ink);color:#fff;border-radius:8px;padding:8px 0;width:52px;text-align:center;font-family:'Prompt';font-weight:700;font-size:18px}
+.cd small{display:block;font-size:9.5px;font-weight:400;color:#CBBFE8}
+.footer{background:var(--ink);color:#CBBFE8;font-size:12px;padding:18px 26px;display:flex;justify-content:space-between;align-items:center}
+.footer .f-logo{font-size:16px}
+@media(max-width:900px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.two{grid-template-columns:1fr}.nav{overflow-x:auto}}
+</style>
+</head>
+<body>
+
+<div class="switch-wrap">
+  <div class="switch-title"><b>FANVERSE — UI Mockup ทุกหน้า</b> &nbsp;·&nbsp; กดปุ่มเพื่อสลับหน้า แล้ว Screenshot ไปใส่รายงาน 5.7 ได้เลย</div>
+  <div class="tabs" id="tabs"></div>
+</div>
+
+<div class="frame">
+  <div class="chrome">
+    <span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span>
+    <div class="url" id="urlbar">https://fanverse.com</div>
+  </div>
+
+  <nav class="nav" id="topnav">
+    <span class="f-logo">FANVERSE <span>✈</span></span>
+    <a data-nav="home" href="#">หน้าแรก</a>
+    <a data-nav="shop" href="#">Shop by Fandom</a>
+    <a data-nav="preorder" href="#">Pre-order</a>
+    <a data-nav="link" href="#">Link-to-Order</a>
+    <a data-nav="go" href="#">Group Order</a>
+    <a data-nav="second" href="#">มือสอง</a>
+    <a data-nav="bid" href="#">ประมูล</a>
+    <a data-nav="guide" href="#">Fan Guide</a>
+    <span class="sp"></span>
+    <span class="bell">🔔<i>3</i></span>
+    <div class="avatar">ii</div>
+  </nav>
+
+  <main class="page">
+
+  <!-- ================= 1 HOME ================= -->
+  <section class="screen" id="s-home">
+    <div style="background:var(--grad-soft);border-radius:18px;padding:34px 36px;position:relative;overflow:hidden">
+      <div style="max-width:60%">
+        <span class="badge b-pink">The Universe of Every Fan</span>
+        <h2 style="font-size:30px;font-weight:800;line-height:1.3;margin:10px 0 8px">สั่งของแฟนคลับจากทั่วโลก<br>จบครบ <span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">ในที่เดียว</span></h2>
+        <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:16px">Pre-order · ฝากกดผ่านลิงก์ · Group Order · มือสอง · ประมูล — โปร่งใส ติดตามได้ทุกขั้นตอน</p>
+        <div style="display:flex;gap:8px;max-width:520px">
+          <input class="inp" placeholder="🔍 วางลิงก์สินค้า หรือค้นหาศิลปิน / อนิเมะ / สินค้า...">
+          <button class="btn btn-p">ค้นหา</button>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:7px;flex-wrap:wrap">
+          <span class="chip on">ทั้งหมด</span><span class="chip">K-pop</span><span class="chip">J-pop</span><span class="chip">Anime</span><span class="chip">T-pop</span><span class="chip">Thai Series</span><span class="chip">Trading Card</span>
+        </div>
+      </div>
+      <div style="position:absolute;right:26px;top:24px;font-size:110px;opacity:.35">🛍️</div>
+      <div style="position:absolute;right:150px;bottom:14px;font-size:56px;opacity:.35">✈️</div>
+    </div>
+
+    <div class="grid4" style="margin-top:18px">
+      <div class="card stat"><div class="stat-n">4 ประเทศ</div><div class="stat-l">แหล่งสินค้า ญี่ปุ่น · เกาหลี · จีน · ไทย</div></div>
+      <div class="card stat"><div class="stat-n">฿0</div><div class="stat-l">ค่าธรรมเนียมเมื่อชำระด้วยการโอน</div></div>
+      <div class="card stat"><div class="stat-n">3 วัน</div><div class="stat-l">SLA จัดส่งของร้านมือสอง</div></div>
+      <div class="card stat"><div class="stat-n">100%</div><div class="stat-l">พักเงินคุ้มครองผู้ซื้อ (Escrow)</div></div>
+    </div>
+
+    <div class="sec-h"><h3>🔥 Pre-order กำลังเปิดรับ</h3><a href="#">ดูทั้งหมด →</a></div>
+    <div class="grid4">
+      <div class="card"><div class="thumb t1"><span class="badge b-pink tag">ปิดรอบใน 2 วัน</span>💿</div><div class="p-body"><div class="p-name">อัลบั้มเวอร์ชันพิเศษ + โฟโต้การ์ดสุ่ม (เกาหลี)</div><div class="p-sub">Pre-order · เรท KR 0.30</div><div class="p-price">฿1,290 <small>รวมภาษีแล้ว</small></div></div></div>
+      <div class="card"><div class="thumb t2"><span class="badge b-vio tag">ปิดรอบใน 5 วัน</span>🧸</div><div class="p-body"><div class="p-name">ฟิกเกอร์ตัวละครอนิเมะ Scale 1/7 (ญี่ปุ่น)</div><div class="p-sub">Pre-order · เรท JP 0.25</div><div class="p-price">฿4,850 <small>รวมภาษีแล้ว</small></div></div></div>
+      <div class="card"><div class="thumb t3"><span class="badge b-amber tag">ใกล้เต็ม 92%</span>📸</div><div class="p-body"><div class="p-name">โฟโต้บุ๊กศิลปิน T-pop + โปสเตอร์ (ไทย)</div><div class="p-sub">Pre-order · เรท TH 0.15</div><div class="p-price">฿890 <small>รวมภาษีแล้ว</small></div></div></div>
+      <div class="card"><div class="thumb t4"><span class="badge b-blue tag">มาใหม่</span>🎫</div><div class="p-body"><div class="p-name">เซตการ์ดสะสม Official Season 3 (จีน)</div><div class="p-sub">Pre-order · เรท CN 0.49</div><div class="p-price">฿760 <small>รวมภาษีแล้ว</small></div></div></div>
+    </div>
+
+    <div class="sec-h"><h3>⏰ ประมูลใกล้ปิด</h3><a href="#">ไปที่ Bidding Shop →</a></div>
+    <div class="grid4">
+      <div class="card"><div class="thumb t2"><span class="badge b-red tag">เหลือ 00:42:11</span>🃏</div><div class="p-body"><div class="p-name">โฟโต้การ์ดหายาก งานแฟนไซน์ปี 2023</div><div class="p-sub">12 Bids · เริ่มต้น ฿500</div><div class="p-price">฿2,150 <small>ราคาปัจจุบัน</small></div></div></div>
+      <div class="card"><div class="thumb t3"><span class="badge b-red tag">เหลือ 03:10:05</span>🎤</div><div class="p-body"><div class="p-name">แท่งไฟรุ่นแรก สภาพ 95% กล่องครบ</div><div class="p-sub">7 Bids · เริ่มต้น ฿900</div><div class="p-price">฿1,600 <small>ราคาปัจจุบัน</small></div></div></div>
+      <div class="card"><div class="thumb t1"><span class="badge b-amber tag">เหลือ 1 วัน</span>🧢</div><div class="p-body"><div class="p-name">หมวก Official Tour Merch (Limited)</div><div class="p-sub">3 Bids · เริ่มต้น ฿350</div><div class="p-price">฿520 <small>ราคาปัจจุบัน</small></div></div></div>
+      <div class="card"><div class="thumb t4"><span class="badge b-amber tag">เหลือ 2 วัน</span>📀</div><div class="p-body"><div class="p-name">อัลบั้มญี่ปุ่น First Press + Obi ครบ</div><div class="p-sub">5 Bids · เริ่มต้น ฿600</div><div class="p-price">฿980 <small>ราคาปัจจุบัน</small></div></div></div>
+    </div>
+  </section>
+
+  <!-- ================= 2 SHOP BY FANDOM ================= -->
+  <section class="screen" id="s-shop">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:4px">Shop by Fandom</h2>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px">เลือกดูสินค้าตามจักรวาลของคุณ — กรองตามศิลปิน ประเภทสินค้า ประเทศต้นทาง และช่วงราคา</p>
+    <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px">
+      <span class="chip on">K-pop</span><span class="chip">J-pop</span><span class="chip">Anime</span><span class="chip">T-pop</span><span class="chip">Thai BL/GL Series</span><span class="chip">Trading Card</span><span class="chip">Figure</span>
+    </div>
+    <div class="two">
+      <div>
+        <div class="grid3">
+          <div class="card"><div class="thumb t1">💿</div><div class="p-body"><div class="p-name">อัลบั้มคัมแบ็ก Ver. A (Weverse)</div><div class="p-sub">🇰🇷 เกาหลี · Official</div><div class="p-price">฿1,150</div></div></div>
+          <div class="card"><div class="thumb t2">🩷</div><div class="p-body"><div class="p-name">เซตโฟโต้การ์ด POB ครบ 4 ร้าน</div><div class="p-sub">🇰🇷 เกาหลี · Ktown4u</div><div class="p-price">฿1,890</div></div></div>
+          <div class="card"><div class="thumb t3">🎧</div><div class="p-body"><div class="p-name">หูฟัง Collab รุ่นลิมิเต็ด</div><div class="p-sub">🇰🇷 เกาหลี · Official</div><div class="p-price">฿3,450</div></div></div>
+          <div class="card"><div class="thumb t4">🧸</div><div class="p-body"><div class="p-name">ตุ๊กตาคาแรกเตอร์ 20 ซม.</div><div class="p-sub">🇰🇷 เกาหลี · SM Town</div><div class="p-price">฿1,290</div></div></div>
+          <div class="card"><div class="thumb t2">📀</div><div class="p-body"><div class="p-name">แผ่นเสียง LP รุ่นสะสม</div><div class="p-sub">🇰🇷 เกาหลี · Makestar</div><div class="p-price">฿2,750</div></div></div>
+          <div class="card"><div class="thumb t1">🎫</div><div class="p-body"><div class="p-name">เซตการ์ด Season Greeting 2026</div><div class="p-sub">🇰🇷 เกาหลี · JYP Store</div><div class="p-price">฿1,590</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:18px">
+          <h4 style="font-size:14px;margin-bottom:12px">ตัวกรอง</h4>
+          <div class="field"><label>ประเทศต้นทาง</label>
+            <div class="opt on"><span class="radio"></span> 🇰🇷 เกาหลี <span class="fee">เรท 0.30</span></div>
+            <div class="opt"><span class="radio"></span> 🇯🇵 ญี่ปุ่น <span class="fee">เรท 0.25</span></div>
+            <div class="opt"><span class="radio"></span> 🇨🇳 จีน <span class="fee">เรท 0.49</span></div>
+            <div class="opt"><span class="radio"></span> 🇹🇭 ไทย (T-pop) <span class="fee">เรท 0.15</span></div>
+          </div>
+          <div class="field"><label>ช่วงราคา (บาท)</label>
+            <div style="display:flex;gap:8px"><input class="inp" placeholder="ต่ำสุด"><input class="inp" placeholder="สูงสุด"></div>
+          </div>
+          <div class="field"><label>ประเภท</label>
+            <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="chip on">อัลบั้ม</span><span class="chip">การ์ด</span><span class="chip">ฟิกเกอร์</span><span class="chip">เสื้อผ้า</span><span class="chip">แท่งไฟ</span></div>
+          </div>
+          <button class="btn btn-p" style="width:100%">ใช้ตัวกรอง</button>
+        </div>
+        <div class="alert a-blue" style="margin-top:14px">💡 <span>ราคาที่แสดงเป็น <b>ราคาสุทธิรวมภาษีนำเข้าแล้ว</b> — ไม่มีค่าใช้จ่ายแอบแฝง</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3 PRE-ORDER ================= -->
+  <section class="screen" id="s-preorder">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:4px">Pre-order Campaigns</h2>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px">รายการสินค้าที่ระบบเปิดรับ Pre-order ทั้งหมด · ราคา = ค่าสินค้า × เรทของร้าน + ภาษี</p>
+    <div class="two">
+      <div class="card" style="overflow:hidden">
+        <div class="thumb t1" style="height:210px;border-radius:14px 14px 0 0;font-size:64px"><span class="badge b-pink tag">รอบที่ 12 / 2026</span>💿</div>
+        <div style="padding:20px 22px">
+          <div style="display:flex;gap:8px;margin-bottom:8px"><span class="badge b-vio">K-pop</span><span class="badge b-mint">🇰🇷 เกาหลี · เรท 0.30</span><span class="badge b-amber">ปิดรอบ 11 ก.ค. 2569</span></div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:4px">อัลบั้มคัมแบ็กเวอร์ชันพิเศษ + POB โฟโต้การ์ดสุ่ม</h3>
+          <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:14px">Official Merchandise · กำหนดส่งมอบโดยประมาณ ก.ย. 2569 · จำกัด 2 ชิ้น/บัญชี</p>
+          <div style="background:#F8F5FF;border-radius:12px;padding:14px 16px">
+            <div class="row"><span>ค่าสินค้า (35,000 วอน × เรท 0.30)</span><b>฿1,050.00</b></div>
+            <div class="row"><span>ภาษีนำเข้า หมวดอัลบั้ม/CD (10%)</span><b>฿105.00</b></div>
+            <hr class="hr">
+            <div class="row" style="font-size:15px"><span><b>ราคาสุทธิ</b></span><b style="color:var(--pink);font-size:18px">฿1,155.00</b></div>
+            <div class="note">* ค่าจัดส่งระหว่างประเทศชำระภายหลังตามน้ำหนักจริง เมื่อสินค้าถึงโกดังเกาหลี</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:16px;align-items:center">
+            <button class="btn btn-p" style="flex:1;justify-content:center">สั่ง Pre-order ตอนนี้</button>
+            <div class="countdown"><div class="cd">02<small>วัน</small></div><div class="cd">14<small>ชม.</small></div><div class="cd">36<small>นาที</small></div></div>
+          </div>
+          <div class="alert a-red" style="margin-top:12px">⚠️ <span><b>เมื่อชำระเงินและระบบสั่งซื้อแล้ว ไม่สามารถยกเลิกได้ทุกกรณี</b> — กรุณาตรวจสอบรายการก่อนยืนยัน</span></div>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-size:14px;margin-bottom:10px;font-weight:600">รอบอื่นที่เปิดรับอยู่</h4>
+        <div class="card" style="display:flex;gap:12px;padding:12px;margin-bottom:10px"><div class="thumb t2" style="width:76px;height:76px;border-radius:10px;font-size:28px;flex:none">🧸</div><div><div class="p-name" style="height:auto">ฟิกเกอร์ Scale 1/7 (ญี่ปุ่น · เรท 0.25)</div><div class="p-sub">ปิดรอบ 14 ก.ค. · ส่งมอบ ธ.ค. 69</div><div class="p-price" style="font-size:14px">฿4,850</div></div></div>
+        <div class="card" style="display:flex;gap:12px;padding:12px;margin-bottom:10px"><div class="thumb t3" style="width:76px;height:76px;border-radius:10px;font-size:28px;flex:none">📸</div><div><div class="p-name" style="height:auto">โฟโต้บุ๊ก T-pop (ไทย · เรท 0.15)</div><div class="p-sub">ปิดรอบ 18 ก.ค. · ส่งมอบ ส.ค. 69</div><div class="p-price" style="font-size:14px">฿890</div></div></div>
+        <div class="card" style="display:flex;gap:12px;padding:12px;margin-bottom:10px"><div class="thumb t4" style="width:76px;height:76px;border-radius:10px;font-size:28px;flex:none">🎫</div><div><div class="p-name" style="height:auto">เซตการ์ดสะสม S3 (จีน · เรท 0.49)</div><div class="p-sub">ปิดรอบ 20 ก.ค. · ส่งมอบ ต.ค. 69</div><div class="p-price" style="font-size:14px">฿760</div></div></div>
+        <div class="card" style="display:flex;gap:12px;padding:12px"><div class="thumb t1" style="width:76px;height:76px;border-radius:10px;font-size:28px;flex:none">🎤</div><div><div class="p-name" style="height:auto">แท่งไฟ Ver.3 (เกาหลี · เรท 0.30)</div><div class="p-sub">ปิดรอบ 25 ก.ค. · ส่งมอบ พ.ย. 69</div><div class="p-price" style="font-size:14px">฿1,720</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4 LINK-TO-ORDER ================= -->
+  <section class="screen" id="s-link">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:4px">Link-to-Order — ฝากกดผ่านลิงก์</h2>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px">วางลิงก์สินค้าจากเว็บไซต์ที่รองรับ ระบบคำนวณราคาให้ทันที · รองรับ Weverse, Ktown4u, Yahoo! Japan, Mercari, Taobao, Xianyu และอื่น ๆ</p>
+    <div class="two">
+      <div class="card" style="padding:22px">
+        <div class="field"><label>1. ลิงก์สินค้า</label>
+          <input class="inp" value="https://jp.mercari.com/item/m92830471265" style="border-color:var(--violet)">
+          <div class="note">✅ ตรวจพบ: Mercari (ญี่ปุ่น) · ใช้เรทร้าน 0.25</div>
+        </div>
+        <div class="field"><label>สินค้าที่ระบบดึงข้อมูลได้</label>
+          <div style="display:flex;gap:12px;background:#F8F5FF;border-radius:12px;padding:12px">
+            <div class="thumb t2" style="width:66px;height:66px;border-radius:10px;font-size:26px;flex:none">🩷</div>
+            <div><div style="font-size:13.5px;font-weight:600">โฟโต้การ์ดสะสม สภาพดี ไม่มีรอย (มือสอง)</div>
+            <div style="font-size:12px;color:var(--ink-soft)">ผู้ขาย: mercari_seller_jp · สภาพ: ดีมาก</div>
+            <div style="font-family:'Prompt';font-weight:700;color:var(--deep);margin-top:3px">¥1,000</div></div>
+          </div>
+        </div>
+        <div class="field"><label>2. วิธีการจัดส่งระหว่างประเทศ</label>
+          <div class="opt on"><span class="radio"></span> ✈️ Air Freight (7–14 วัน) <span class="fee">ตามน้ำหนักจริง</span></div>
+          <div class="opt"><span class="radio"></span> 🚢 Sea Freight (25–35 วัน) <span class="fee">ประหยัดกว่า ~45%</span></div>
+        </div>
+        <div class="field"><label>3. วิธีการชำระเงิน</label>
+          <div class="opt on"><span class="radio"></span> 🏦 โอนเงิน / PromptPay <span class="fee" style="color:var(--mint)">ฟรี ไม่มีค่าธรรมเนียม</span></div>
+          <div class="opt"><span class="radio"></span> 💳 บัตรเครดิต <span class="fee" style="color:var(--amber)">ค่าบริการ +3%</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:20px">
+          <h4 style="font-size:15px;font-weight:600;margin-bottom:12px">🧾 ใบเสนอราคา</h4>
+          <div class="row"><span>ค่าสินค้า</span><b>¥1,000</b></div>
+          <div class="row"><span>เรทร้านญี่ปุ่น (รวมอัตราแลกเปลี่ยน)</span><b>0.25 ฿/¥</b></div>
+          <div class="row"><span>= ค่าสินค้าเป็นเงินบาท</span><b>฿250.00</b></div>
+          <div class="row"><span>ภาษีนำเข้า (มูลค่าไม่เกิน 1,500 บาท → VAT 7%)</span><b>฿17.50</b></div>
+          <div class="row"><span>ค่าธรรมเนียมชำระเงิน (โอน)</span><b style="color:var(--mint)">฿0.00</b></div>
+          <hr class="hr">
+          <div class="row" style="font-size:15px"><span><b>ยอดชำระตอนนี้</b></span><b style="color:var(--pink);font-size:19px">฿267.50</b></div>
+          <div class="note">ค่าส่งระหว่างประเทศเรียกเก็บภายหลังตามน้ำหนักจริง เมื่อสินค้าถึงโกดังญี่ปุ่น · ค่าส่งในไทยชำระเมื่อกดจัดส่ง</div>
+          <button class="btn btn-p" style="width:100%;justify-content:center;margin-top:14px">ยืนยันและชำระเงิน ฿267.50</button>
+          <label style="display:flex;gap:8px;font-size:11.5px;color:var(--ink-soft);margin-top:11px;align-items:flex-start"><input type="checkbox" checked style="margin-top:2px"> ฉันเข้าใจว่า<b>เมื่อระบบสั่งซื้อสินค้าแล้วจะไม่สามารถยกเลิกได้</b></label>
+        </div>
+        <div class="alert a-blue" style="margin-top:12px">💰 <span><b>การชำระเงิน 3 จังหวะ</b><br>① ค่าสินค้า+ภาษี ตอนสั่งซื้อ → ② ค่าส่งระหว่างประเทศตามน้ำหนัก เมื่อถึงโกดังต้นทาง → ③ ค่าส่งในไทย เมื่อกดจัดส่ง (หรือฝากรอรวมกล่อง)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5 GROUP ORDER ================= -->
+  <section class="screen" id="s-go">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <h2 style="font-size:22px;font-weight:700">Group Order — รวมออเดอร์ เฉลี่ยค่าส่ง</h2>
+      <button class="btn btn-o btn-sm">+ เปิด Group Order ใหม่</button>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px">เข้าร่วม GO ที่เปิดอยู่เพื่อเฉลี่ยค่าจัดส่งระหว่างประเทศต่อชิ้นให้ถูกลง</p>
+    <div class="grid3">
+      <div class="card" style="padding:18px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="badge b-vio">🇰🇷 เกาหลี</span><span class="badge b-mint">เปิดรับอยู่</span></div>
+        <h4 style="font-size:14.5px;font-weight:600;margin-bottom:4px">GO อัลบั้มคัมแบ็ก + POB ร้าน WITHMUU</h4>
+        <p style="font-size:12px;color:var(--ink-soft);margin-bottom:12px">ปิดรับ 12 ก.ค. 2569 · จัดโดย @gm.orderth ★4.9</p>
+        <div style="background:#F8F5FF;border-radius:10px;height:9px;overflow:hidden;margin-bottom:6px"><div style="width:76%;height:100%;background:var(--grad)"></div></div>
+        <div class="row" style="font-size:12px"><span>ผู้เข้าร่วม 38 / 50 คน</span><b>ค่าส่งเฉลี่ย ฿62/ชิ้น</b></div>
+        <button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:10px">เข้าร่วม GO นี้</button>
+      </div>
+      <div class="card" style="padding:18px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="badge b-blue">🇯🇵 ญี่ปุ่น</span><span class="badge b-mint">เปิดรับอยู่</span></div>
+        <h4 style="font-size:14.5px;font-weight:600;margin-bottom:4px">GO กาชา + ของสุ่มตู้ Animate เดือน ก.ค.</h4>
+        <p style="font-size:12px;color:var(--ink-soft);margin-bottom:12px">ปิดรับ 15 ก.ค. 2569 · จัดโดย @anime.proxy ★4.8</p>
+        <div style="background:#F8F5FF;border-radius:10px;height:9px;overflow:hidden;margin-bottom:6px"><div style="width:52%;height:100%;background:var(--grad)"></div></div>
+        <div class="row" style="font-size:12px"><span>ผู้เข้าร่วม 26 / 50 คน</span><b>ค่าส่งเฉลี่ย ฿48/ชิ้น</b></div>
+        <button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:10px">เข้าร่วม GO นี้</button>
+      </div>
+      <div class="card" style="padding:18px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span class="badge b-amber">🇨🇳 จีน</span><span class="badge b-red">ใกล้ปิด</span></div>
+        <h4 style="font-size:14.5px;font-weight:600;margin-bottom:4px">GO สินค้าแฟนเมด Taobao รอบพิเศษ</h4>
+        <p style="font-size:12px;color:var(--ink-soft);margin-bottom:12px">ปิดรับ 10 ก.ค. 2569 · จัดโดย @cn.haul ★4.7</p>
+        <div style="background:#F8F5FF;border-radius:10px;height:9px;overflow:hidden;margin-bottom:6px"><div style="width:94%;height:100%;background:var(--grad)"></div></div>
+        <div class="row" style="font-size:12px"><span>ผู้เข้าร่วม 47 / 50 คน</span><b>ค่าส่งเฉลี่ย ฿39/ชิ้น</b></div>
+        <button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:10px">เข้าร่วม GO นี้</button>
+      </div>
+    </div>
+    <div class="alert a-mint" style="margin-top:16px">🛡️ <span>ทุก Group Order บน FANVERSE ผ่านระบบชำระเงินกลางของแพลตฟอร์ม — ไม่ต้องโอนเงินหาผู้จัดโดยตรง หมดปัญหาออเดอร์ตกหล่นและการโกง</span></div>
+  </section>
+
+  <!-- ================= 6 MY ORDERS ================= -->
+  <section class="screen" id="s-orders">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:14px">My Orders — คำสั่งซื้อของฉัน</h2>
+    <div style="display:flex;gap:7px;margin-bottom:14px"><span class="chip on">ทั้งหมด (6)</span><span class="chip">รอชำระค่าส่ง (1)</span><span class="chip">กำลังจัดส่งมาไทย (2)</span><span class="chip">อยู่ในคลังไทย (2)</span><span class="chip">สำเร็จ (1)</span></div>
+    <div class="card">
+      <table class="tbl">
+        <tr><th>คำสั่งซื้อ</th><th>ประเภท</th><th>ประเทศ</th><th>สถานะ</th><th>ยอดชำระ</th><th></th></tr>
+        <tr>
+          <td><b>#FV-26-08812</b><br><span style="color:var(--ink-soft)">โฟโต้การ์ด Mercari ¥1,000</span></td>
+          <td><span class="badge b-blue">Link-to-Order</span></td><td>🇯🇵</td>
+          <td><span class="badge b-amber">ถึงโกดังญี่ปุ่น — รอชำระค่าส่ง</span><br><span style="font-size:11px;color:var(--amber)">น้ำหนักจริง 0.12 kg = ฿95</span></td>
+          <td><b>฿267.50</b></td>
+          <td><button class="btn btn-p btn-sm">ชำระค่าส่ง ฿95</button></td>
+        </tr>
+        <tr>
+          <td><b>#FV-26-08790</b><br><span style="color:var(--ink-soft)">อัลบั้ม Pre-order รอบ 12</span></td>
+          <td><span class="badge b-vio">Pre-order</span></td><td>🇰🇷</td>
+          <td><span class="badge b-blue">กำลังจัดส่งมาไทย ✈️</span><br><span style="font-size:11px;color:var(--ink-soft)">ถึงไทยโดยประมาณ 14 ก.ค.</span></td>
+          <td><b>฿1,155.00</b></td>
+          <td><button class="btn btn-g btn-sm">ติดตามพัสดุ</button></td>
+        </tr>
+        <tr>
+          <td><b>#FV-26-08765</b><br><span style="color:var(--ink-soft)">ฟิกเกอร์ Scale 1/7</span></td>
+          <td><span class="badge b-vio">Pre-order</span></td><td>🇯🇵</td>
+          <td><span class="badge b-mint">อยู่ในคลังไทย — เลือกจัดส่งได้</span></td>
+          <td><b>฿4,850.00</b></td>
+          <td><button class="btn btn-o btn-sm">ไปที่ My Warehouse</button></td>
+        </tr>
+        <tr>
+          <td><b>#FV-26-08701</b><br><span style="color:var(--ink-soft)">แท่งไฟมือสอง สภาพ 95%</span></td>
+          <td><span class="badge b-pink">มือสอง</span></td><td>🇹🇭</td>
+          <td><span class="badge b-blue">ผู้ขายกำลังจัดส่ง (ภายใน 3 วัน)</span><br><span style="font-size:11px;color:var(--ink-soft)">เงินถูกพักไว้ ปล่อยเมื่อคุณได้รับสินค้า</span></td>
+          <td><b>฿1,600.00</b></td>
+          <td><button class="btn btn-g btn-sm">ติดตามพัสดุ</button></td>
+        </tr>
+        <tr>
+          <td><b>#FV-26-08654</b><br><span style="color:var(--ink-soft)">โฟโต้การ์ดหายาก (ชนะประมูล)</span></td>
+          <td><span class="badge b-amber">ประมูล</span></td><td>🇹🇭</td>
+          <td><span class="badge b-mint">สำเร็จ — ได้รับสินค้าแล้ว ✓</span></td>
+          <td><b>฿2,150.00</b></td>
+          <td><button class="btn btn-g btn-sm">ให้คะแนน</button></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= 7 MY WAREHOUSE ================= -->
+  <section class="screen" id="s-wh">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:4px">My Warehouse — พัสดุของฉันในคลังไทย</h2>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px">สินค้าที่เดินทางถึงไทยแล้ว เลือก <b>จัดส่งทันที</b> หรือ <b>ฝากรอรวมกล่อง</b> กับพัสดุชิ้นถัดไปเพื่อจ่ายค่าส่งครั้งเดียว</p>
+    <div class="two">
+      <div>
+        <div class="card" style="padding:16px;display:flex;gap:14px;margin-bottom:12px">
+          <div class="thumb t2" style="width:84px;height:84px;border-radius:10px;font-size:32px;flex:none">🧸</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between"><b style="font-size:14px">ฟิกเกอร์ Scale 1/7 — #FV-26-08765</b><span class="badge b-mint">ถึงคลังไทย 6 ก.ค.</span></div>
+            <div style="font-size:12px;color:var(--ink-soft);margin:4px 0 10px">น้ำหนัก 1.8 kg · 30×25×22 ซม. · 📷 มีภาพถ่ายยืนยันสภาพ · ฝากฟรีถึง 5 ส.ค.</div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-p btn-sm">🚚 จัดส่งทันที — ชำระค่าส่งในไทย ฿89</button>
+              <button class="btn btn-o btn-sm">📦 ฝากรอรวมกล่อง</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding:16px;display:flex;gap:14px;margin-bottom:12px;border:1.5px solid var(--violet);background:#FBF9FF">
+          <div class="thumb t1" style="width:84px;height:84px;border-radius:10px;font-size:32px;flex:none">💿</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between"><b style="font-size:14px">อัลบั้มพิเศษ 2 ชุด — #FV-26-08688</b><span class="badge b-vio">📦 ฝากรอรวมกล่องอยู่</span></div>
+            <div style="font-size:12px;color:var(--ink-soft);margin:4px 0 10px">น้ำหนัก 0.9 kg · ฝากฟรีถึง 28 ก.ค. · จะถูกส่งพร้อมพัสดุที่คุณกดรวม</div>
+            <div style="display:flex;gap:8px"><button class="btn btn-g btn-sm">นำออกจากการรวมกล่อง</button></div>
+          </div>
+        </div>
+        <div class="card" style="padding:16px;display:flex;gap:14px">
+          <div class="thumb t3" style="width:84px;height:84px;border-radius:10px;font-size:32px;flex:none;opacity:.65">🩷</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between"><b style="font-size:14px;color:var(--ink-soft)">โฟโต้การ์ด Mercari — #FV-26-08812</b><span class="badge b-blue">กำลังเดินทางมาไทย ✈️</span></div>
+            <div style="font-size:12px;color:var(--ink-soft);margin:4px 0">ถึงไทยโดยประมาณ 14 ก.ค. — เมื่อถึงแล้วจะเลือกจัดส่ง/รวมกล่องได้ที่นี่</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:20px">
+          <h4 style="font-size:15px;font-weight:600;margin-bottom:12px">📦 สรุปการรวมกล่อง</h4>
+          <div class="row"><span>พัสดุที่เลือกรวม</span><b>2 ชิ้น</b></div>
+          <div class="row"><span>น้ำหนักรวม</span><b>2.7 kg</b></div>
+          <hr class="hr">
+          <div class="row"><span>ค่าส่งแยก 2 ครั้ง</span><b style="text-decoration:line-through;color:var(--ink-soft)">฿148</b></div>
+          <div class="row"><span><b>ค่าส่งเมื่อรวมกล่อง</b></span><b style="color:var(--mint);font-size:17px">฿95</b></div>
+          <div class="alert a-mint" style="margin-top:10px">💚 ประหยัด ฿53 (36%)</div>
+          <button class="btn btn-p" style="width:100%;justify-content:center;margin-top:14px">รวมกล่องและจัดส่ง — ชำระ ฿95</button>
+        </div>
+        <div class="alert a-amber" style="margin-top:12px">⏳ <span>ฝากคลังฟรี 30 วันแรก หลังจากนั้นคิดค่าฝาก ฿5/ชิ้น/วัน</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8 ORDER TRACKING ================= -->
+  <section class="screen" id="s-track">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:4px">Order Tracking — #FV-26-08812</h2>
+    <p style="font-size:13px;color:var(--ink-soft)">โฟโต้การ์ดสะสม (Mercari) · Link-to-Order · 🇯🇵 ญี่ปุ่น → 🇹🇭 ไทย · Air Freight</p>
+    <div class="card" style="padding:26px 22px;margin-top:16px">
+      <div class="route">
+        <div class="fill"></div>
+        <div class="stop done"><div class="pt">✓</div><div class="lb">ยืนยันคำสั่งซื้อ<br>ชำระเงินสำเร็จ</div><div class="dt">1 ก.ค. 10:24</div></div>
+        <div class="stop done"><div class="pt">✓</div><div class="lb">สั่งซื้อจาก<br>ร้านต้นทางแล้ว</div><div class="dt">1 ก.ค. 11:02</div></div>
+        <div class="stop done"><div class="pt">✓</div><div class="lb">ถึงโกดังญี่ปุ่น<br>ชำระค่าส่ง ฿95 ✓</div><div class="dt">5 ก.ค. 15:40</div></div>
+        <div class="stop cur"><div class="pt">✈</div><div class="lb">ส่งออก /<br>กำลังเดินทาง</div><div class="dt">8 ก.ค. 09:15</div></div>
+        <div class="stop wait"><div class="pt">·</div><div class="lb">พิธีการ<br>ศุลกากรไทย</div><div class="dt">—</div></div>
+        <div class="stop wait"><div class="pt">·</div><div class="lb">ถึงคลังไทย<br>เลือกจัดส่ง/รวมกล่อง</div><div class="dt">ประมาณ 14 ก.ค.</div></div>
+        <div class="stop wait"><div class="pt">🏠</div><div class="lb">นำส่งถึงบ้าน</div><div class="dt">—</div></div>
+      </div>
+    </div>
+    <div class="two" style="margin-top:16px">
+      <div class="card" style="padding:18px">
+        <h4 style="font-size:14px;font-weight:600;margin-bottom:10px">ประวัติสถานะ</h4>
+        <table class="tbl">
+          <tr><td style="width:130px;color:var(--ink-soft)">8 ก.ค. 09:15</td><td>✈️ พัสดุออกจากศูนย์คัดแยก Narita — เที่ยวบินขนส่งสินค้า สู่กรุงเทพฯ</td></tr>
+          <tr><td style="color:var(--ink-soft)">6 ก.ค. 13:30</td><td>📦 แพ็กสินค้าพร้อมกันกระแทก + 📷 อัปโหลดภาพถ่ายยืนยันสภาพสินค้า</td></tr>
+          <tr><td style="color:var(--ink-soft)">5 ก.ค. 16:05</td><td>💳 คุณชำระค่าจัดส่งระหว่างประเทศ ฿95 (น้ำหนักจริง 0.12 kg) เรียบร้อย</td></tr>
+          <tr><td style="color:var(--ink-soft)">5 ก.ค. 15:40</td><td>🏬 สินค้าถึงโกดัง FANVERSE โตเกียว — แจ้งเตือนชำระค่าส่งผ่าน LINE แล้ว</td></tr>
+          <tr><td style="color:var(--ink-soft)">1 ก.ค. 11:02</td><td>🛒 ระบบสั่งซื้อสินค้าจากร้านต้นทาง Mercari สำเร็จ (ยกเลิกไม่ได้หลังขั้นตอนนี้)</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="card" style="padding:18px">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:10px">สรุปค่าใช้จ่าย (3 จังหวะ)</h4>
+          <div class="row"><span>① ค่าสินค้า + VAT (ชำระแล้ว)</span><b>฿267.50 ✓</b></div>
+          <div class="row"><span>② ค่าส่งระหว่างประเทศ (ชำระแล้ว)</span><b>฿95.00 ✓</b></div>
+          <div class="row"><span>③ ค่าส่งในไทย</span><b style="color:var(--ink-soft)">รอเลือกเมื่อถึงไทย</b></div>
+        </div>
+        <div class="alert a-blue" style="margin-top:12px">🔔 <span>ทุกการเปลี่ยนสถานะแจ้งเตือนอัตโนมัติผ่าน <b>LINE Official Account</b> และอีเมล</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 9 SECOND-HAND ================= -->
+  <section class="screen" id="s-second">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <h2 style="font-size:22px;font-weight:700">Second-hand Shop — สินค้ามือสองจากแฟนด้วยกัน</h2>
+      <button class="btn btn-p btn-sm">+ ลงขายสินค้า</button>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);margin-bottom:16px">ปล่อยต่อของสะสมศิลปิน / อนิเมะ · ระบบพักเงินคุ้มครองผู้ซื้อ · ผู้ขายจัดส่งภายใน 3 วัน</p>
+    <div class="two">
+      <div class="grid3" style="grid-template-columns:repeat(2,1fr)">
+        <div class="card"><div class="thumb t1"><span class="badge b-mint tag">ผู้ขาย ★4.9</span>🩷</div><div class="p-body"><div class="p-name">โฟโต้การ์ดสุ่มจากอัลบั้ม (ลุ้นการ์ดแล้วปล่อยต่อ)</div><div class="p-sub">สภาพใหม่ · ใส่สลีฟตลอด · กทม.</div><div class="p-price">฿180</div><button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:9px">ซื้อเลย</button></div></div>
+        <div class="card"><div class="thumb t2"><span class="badge b-mint tag">ผู้ขาย ★4.8</span>🎤</div><div class="p-body"><div class="p-name">แท่งไฟรุ่นแรก สภาพ 95% กล่อง+คู่มือครบ</div><div class="p-sub">ใช้ 2 คอน · เชียงใหม่</div><div class="p-price">฿1,600</div><button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:9px">ซื้อเลย</button></div></div>
+        <div class="card"><div class="thumb t4"><span class="badge b-mint tag">ผู้ขาย ★5.0</span>🧸</div><div class="p-body"><div class="p-name">ฟิกเกอร์มือสอง แกะเช็ค ตั้งโชว์ในตู้</div><div class="p-sub">กล่องเดิมครบ · ขอนแก่น</div><div class="p-price">฿2,890</div><button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:9px">ซื้อเลย</button></div></div>
+        <div class="card"><div class="thumb t3"><span class="badge b-mint tag">ผู้ขาย ★4.7</span>📀</div><div class="p-body"><div class="p-name">อัลบั้มญี่ปุ่น First Press แผ่นสวยไร้รอย</div><div class="p-sub">Obi ครบ · กทม.</div><div class="p-price">฿750</div><button class="btn btn-p btn-sm" style="width:100%;justify-content:center;margin-top:9px">ซื้อเลย</button></div></div>
+      </div>
+      <div>
+        <div class="card" style="padding:20px">
+          <h4 style="font-size:15px;font-weight:600;margin-bottom:12px">📤 ลงขายสินค้า (ฝากขาย)</h4>
+          <div class="field"><label>รูปสินค้า</label>
+            <div style="display:flex;gap:8px">
+              <div style="width:62px;height:62px;border-radius:10px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🩷</div>
+              <div style="width:62px;height:62px;border-radius:10px;background:var(--grad-soft);display:flex;align-items:center;justify-content:center;font-size:22px">📷</div>
+              <div style="width:62px;height:62px;border-radius:10px;border:1.5px dashed #C9BCE6;display:flex;align-items:center;justify-content:center;color:#B8AED0;font-size:20px">＋</div>
+            </div>
+          </div>
+          <div class="field"><label>ชื่อสินค้า</label><input class="inp" value="โฟโต้การ์ดสุ่มจากอัลบั้ม สภาพใหม่"></div>
+          <div class="field"><label>รายละเอียด</label><input class="inp" value="แกะจากกล่องสุ่ม ใส่สลีฟทันที ไม่มีรอย ส่งพร้อม toploader"></div>
+          <div class="field"><label>ราคา (บาท)</label><input class="inp" value="180"></div>
+          <button class="btn btn-p" style="width:100%;justify-content:center">ลงขายเลย</button>
+        </div>
+        <div class="alert a-mint" style="margin-top:12px">🛡️ <span><b>เงื่อนไขการฝากขาย</b> — ต้องจัดส่งภายใน <b>3 วัน</b>หลังผู้ซื้อชำระเงิน · เงินค่าสินค้าถูกพักไว้ (Escrow) และโอนให้คุณเมื่อผู้ซื้อได้รับสินค้าเรียบร้อย</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 10 BIDDING ================= -->
+  <section class="screen" id="s-bid">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:14px">Bidding Shop — ประมูลสินค้าหายาก</h2>
+    <div class="two">
+      <div class="card" style="overflow:hidden">
+        <div class="thumb t2" style="height:230px;border-radius:14px 14px 0 0;font-size:70px"><span class="badge b-red tag">🔴 LIVE — ปิดประมูลใน 00:42:11</span>🃏</div>
+        <div style="padding:20px 22px">
+          <div style="display:flex;gap:8px;margin-bottom:8px"><span class="badge b-pink">มือสอง · หายาก</span><span class="badge b-mint">ผู้ขาย ★4.9 · ยืนยันตัวตนแล้ว</span></div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:6px">โฟโต้การ์ดหายาก งานแฟนไซน์ปี 2023 (ใบเซ็นสด)</h3>
+          <p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin-bottom:14px">สภาพดีมาก เก็บในสลีฟกันรอย + toploader ตลอด มีใบรับรองจากงาน แถมกล่องเก็บอย่างดี</p>
+          <table class="tbl">
+            <tr><td style="color:var(--ink-soft)">ราคาเริ่มต้น (ผู้ขายตั้งได้เฉพาะรายการนี้)</td><td><b>฿500</b></td></tr>
+            <tr><td style="color:var(--ink-soft)">เวลาประมูล</td><td><b>8 ก.ค. 20:00 — 9 ก.ค. 20:00</b></td></tr>
+            <tr><td style="color:var(--ink-soft)">จำนวน Bid ทั้งหมด</td><td><b>12 ครั้ง จาก 5 บัญชี</b></td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:20px">
+          <div style="text-align:center;margin-bottom:12px">
+            <div style="font-size:12px;color:var(--ink-soft)">ราคาสูงสุดปัจจุบัน</div>
+            <div style="font-family:'Prompt';font-weight:800;font-size:34px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">฿2,150</div>
+            <div class="countdown" style="justify-content:center;margin-top:8px"><div class="cd">00<small>ชม.</small></div><div class="cd">42<small>นาที</small></div><div class="cd">11<small>วินาที</small></div></div>
+          </div>
+          <div class="alert a-amber" style="margin-bottom:12px">🎯 <span>คุณคือผู้เสนอราคาสูงสุดอันดับ 2 — สิทธิ์ Bid คงเหลือ <b>3 / 5 ครั้ง</b> สำหรับรายการนี้</span></div>
+          <div class="field"><label>เสนอราคาใหม่ (ขั้นต่ำ ฿2,200)</label><input class="inp" value="2,300"></div>
+          <div style="background:#F8F5FF;border-radius:10px;padding:12px 14px;margin-bottom:12px">
+            <div class="row" style="font-size:12.5px"><span>ยอดที่เคยพักไว้ (Bid ครั้งก่อน)</span><b>฿2,000</b></div>
+            <div class="row" style="font-size:12.5px"><span>ยอดเสนอใหม่</span><b>฿2,300</b></div>
+            <hr class="hr">
+            <div class="row" style="font-size:13px"><span><b>ตัดเงินเพิ่มเฉพาะส่วนต่าง</b></span><b style="color:var(--pink);font-size:16px">฿300</b></div>
+          </div>
+          <button class="btn btn-p" style="width:100%;justify-content:center">🔨 Bid ฿2,300 (พักเงินเพิ่ม ฿300)</button>
+          <div class="note" style="margin-top:10px;line-height:1.6">• เงินจะถูก<b>พักไว้ (Hold)</b> ทันทีเมื่อกด Bid<br>• ถ้า<b>ชนะ</b> — ใช้เงินที่พักไว้ชำระค่าสินค้าทันที<br>• ถ้า<b>ไม่ชนะ</b> — คืนเงินอัตโนมัติเต็มจำนวนเมื่อหมดเวลา<br>• ผู้ขายจัดส่งภายใน 3 วันหลังปิดประมูล</div>
+        </div>
+        <div class="card" style="padding:16px 18px;margin-top:12px">
+          <h4 style="font-size:13px;font-weight:600;margin-bottom:8px">ประวัติการ Bid ล่าสุด</h4>
+          <div class="row" style="font-size:12.5px"><span>🥇 fan_p***</span><span>฿2,150 · 19:14</span></div>
+          <div class="row" style="font-size:12.5px"><span>🥈 คุณ (ii)</span><span>฿2,000 · 19:02</span></div>
+          <div class="row" style="font-size:12.5px"><span>moon_c***</span><span>฿1,800 · 18:47</span></div>
+          <div class="row" style="font-size:12.5px"><span>star_b***</span><span>฿1,500 · 17:30</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 11 FAN GUIDE ================= -->
+  <section class="screen" id="s-guide">
+    <div style="background:var(--grad-soft);border-radius:16px;padding:26px 30px;margin-bottom:18px">
+      <h2 style="font-size:22px;font-weight:700;margin-bottom:4px">📚 Fan Guide — คลังความรู้สำหรับแฟนคลับ</h2>
+      <p style="font-size:13px;color:var(--ink-soft)">ทุกเรื่องที่ต้องรู้ก่อนสั่งของจากต่างประเทศ — เขียนโดยทีม FANVERSE อัปเดตตามเกณฑ์จริง</p>
+      <div style="margin-top:12px;max-width:480px"><input class="inp" placeholder="🔍 ค้นหา เช่น ภาษีนำเข้าอัลบั้ม, วิธีสั่งจาก Weverse..."></div>
+    </div>
+    <div class="grid3">
+      <div class="card" style="padding:18px"><div style="font-size:26px;margin-bottom:8px">🛒</div><h4 style="font-size:14.5px;font-weight:600;margin-bottom:5px">How to Order</h4><p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6">ขั้นตอน Pre-order, Link-to-Order และ Group Order แบบละเอียด พร้อมภาพประกอบทุกขั้น</p><a href="#" style="font-size:12px;color:var(--violet);font-family:'Prompt';font-weight:600">อ่าน 8 บทความ →</a></div>
+      <div class="card" style="padding:18px;border:1.5px solid var(--violet)"><div style="font-size:26px;margin-bottom:8px">🧾</div><h4 style="font-size:14.5px;font-weight:600;margin-bottom:5px">Import Tax Guide</h4><p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6">ไม่เกิน 1,500 บาท ยกเว้นอากร เสียเฉพาะ VAT 7% · อัลบั้ม/ตุ๊กตา 10% · เครื่องสำอาง 30% · นาฬิกา 5%</p><a href="#" style="font-size:12px;color:var(--violet);font-family:'Prompt';font-weight:600">อ่าน 5 บทความ →</a></div>
+      <div class="card" style="padding:18px"><div style="font-size:26px;margin-bottom:8px">📦</div><h4 style="font-size:14.5px;font-weight:600;margin-bottom:5px">Consolidation Guide</h4><p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6">ฝากคลังยังไงให้คุ้ม รวมกล่องตอนไหนประหยัดสุด พร้อมตัวอย่างคำนวณจริง</p><a href="#" style="font-size:12px;color:var(--violet);font-family:'Prompt';font-weight:600">อ่าน 4 บทความ →</a></div>
+      <div class="card" style="padding:18px"><div style="font-size:26px;margin-bottom:8px">✅</div><h4 style="font-size:14.5px;font-weight:600;margin-bottom:5px">Authenticity Guide</h4><p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6">วิธีเช็กของแท้ Official และเช็กสภาพสินค้ามือสองก่อนซื้อ / ก่อนประมูล</p><a href="#" style="font-size:12px;color:var(--violet);font-family:'Prompt';font-weight:600">อ่าน 6 บทความ →</a></div>
+      <div class="card" style="padding:18px"><div style="font-size:26px;margin-bottom:8px">💬</div><h4 style="font-size:14.5px;font-weight:600;margin-bottom:5px">Fandom Glossary</h4><p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6">POB, Sealed, Unsealed, GO, Toploader — ศัพท์วงการที่มือใหม่ต้องรู้</p><a href="#" style="font-size:12px;color:var(--violet);font-family:'Prompt';font-weight:600">อ่าน 3 บทความ →</a></div>
+      <div class="card" style="padding:18px"><div style="font-size:26px;margin-bottom:8px">❓</div><h4 style="font-size:14.5px;font-weight:600;margin-bottom:5px">FAQ</h4><p style="font-size:12.5px;color:var(--ink-soft);line-height:1.6">คำถามพบบ่อย: การชำระ 3 จังหวะ, นโยบายยกเลิกไม่ได้, การเคลมสินค้าเสียหาย</p><a href="#" style="font-size:12px;color:var(--violet);font-family:'Prompt';font-weight:600">อ่าน 12 คำถาม →</a></div>
+    </div>
+    <div class="sec-h"><h3>บทความยอดนิยม</h3></div>
+    <div class="card">
+      <table class="tbl">
+        <tr><td>🧾 ภาษีนำเข้าอัลบั้ม K-pop คิดยังไง? อธิบายพร้อมตัวอย่างจริง</td><td style="text-align:right;color:var(--ink-soft)">อ่าน 12,840 ครั้ง</td></tr>
+        <tr><td>🛒 วิธีฝากกดของจาก Mercari ทีละขั้น (อัปเดต 2026)</td><td style="text-align:right;color:var(--ink-soft)">อ่าน 9,315 ครั้ง</td></tr>
+        <tr><td>📦 รวมกล่องยังไงให้ค่าส่งถูกลงเกินครึ่ง</td><td style="text-align:right;color:var(--ink-soft)">อ่าน 7,206 ครั้ง</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= 12 MY ACCOUNT ================= -->
+  <section class="screen" id="s-account">
+    <h2 style="font-size:22px;font-weight:700;margin-bottom:14px">My Account</h2>
+    <div class="two">
+      <div>
+        <div class="card" style="padding:20px;display:flex;gap:16px;align-items:center;margin-bottom:14px">
+          <div class="avatar" style="width:58px;height:58px;font-size:22px">ii</div>
+          <div style="flex:1">
+            <b style="font-size:16px;font-family:'Prompt'">ii_fanverse</b> <span class="badge b-mint">ยืนยันตัวตนแล้ว ✓</span>
+            <div style="font-size:12.5px;color:var(--ink-soft);margin-top:2px">สมาชิกตั้งแต่ ม.ค. 2569 · คำสั่งซื้อสำเร็จ 24 รายการ · คะแนนผู้ขาย ★4.9</div>
+          </div>
+          <button class="btn btn-g btn-sm">แก้ไขโปรไฟล์</button>
+        </div>
+        <div class="card" style="padding:20px;margin-bottom:14px">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:12px">📍 ที่อยู่จัดส่ง</h4>
+          <div class="opt on"><span class="radio"></span><div style="font-size:12.5px"><b>บ้าน (ค่าเริ่มต้น)</b><br><span style="color:var(--ink-soft)">99/1 ถ.สุขุมวิท แขวงคลองเตย เขตคลองเตย กรุงเทพฯ 10110 · 08x-xxx-xxxx</span></div></div>
+          <div class="opt"><span class="radio"></span><div style="font-size:12.5px"><b>ที่ทำงาน</b><br><span style="color:var(--ink-soft)">อาคารสาทรซิตี้ ชั้น 12 ถ.สาทรใต้ กรุงเทพฯ 10120</span></div></div>
+          <button class="btn btn-o btn-sm">+ เพิ่มที่อยู่</button>
+        </div>
+        <div class="card" style="padding:20px">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:12px">🔔 การแจ้งเตือน</h4>
+          <div class="row"><span>แจ้งสถานะคำสั่งซื้อผ่าน LINE OA</span><span class="badge b-mint">เปิด ✓</span></div>
+          <div class="row"><span>แจ้งเมื่อถึงกำหนดชำระค่าส่งตามน้ำหนัก</span><span class="badge b-mint">เปิด ✓</span></div>
+          <div class="row"><span>แจ้งรอบ Pre-order ใหม่ของศิลปินที่ติดตาม</span><span class="badge b-mint">เปิด ✓</span></div>
+          <div class="row"><span>แจ้งเมื่อถูกแซง Bid ในรายการที่ประมูลอยู่</span><span class="badge b-mint">เปิด ✓</span></div>
+          <div class="row"><span>อีเมลสรุปรายสัปดาห์</span><span class="badge" style="background:#F3F0FA;color:var(--ink-soft)">ปิด</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:20px;margin-bottom:14px;background:var(--grad-soft);border:none">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:10px">💜 Fandom ที่ติดตาม</h4>
+          <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="chip on">K-pop</span><span class="chip on">Anime</span><span class="chip on">Trading Card</span><span class="chip">J-pop</span><span class="chip">T-pop</span></div>
+          <div class="note" style="margin-top:10px">ใช้เพื่อแนะนำสินค้าและแจ้งรอบ Pre-order ที่ตรงกับความสนใจ</div>
+        </div>
+        <div class="card" style="padding:20px;margin-bottom:14px">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:10px">💳 วิธีการชำระเงิน</h4>
+          <div class="row"><span>🏦 PromptPay (ค่าเริ่มต้น)</span><span class="badge b-mint">ฟรี</span></div>
+          <div class="row"><span>💳 บัตรเครดิต •••• 4127</span><span class="badge b-amber">+3%</span></div>
+        </div>
+        <div class="card" style="padding:20px">
+          <h4 style="font-size:14px;font-weight:600;margin-bottom:10px">🔐 ความปลอดภัย</h4>
+          <div class="row"><span>Two-Factor Authentication (2FA)</span><span class="badge b-mint">เปิด ✓</span></div>
+          <div class="row"><span>เปลี่ยนรหัสผ่านล่าสุด</span><span style="color:var(--ink-soft)">30 พ.ค. 2569</span></div>
+          <button class="btn btn-g btn-sm" style="margin-top:8px">จัดการความปลอดภัย</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div class="footer">
+    <span class="f-logo" style="color:#fff;-webkit-text-fill-color:#fff">FANVERSE ✈</span>
+    <span>The Universe of Every Fan — Pre-order · Link-to-Order · Group Order · Second-hand · Bidding</span>
+    <span>© 2026 FANVERSE (BA.7658 Group 4)</span>
+  </div>
+</div>
+
+<script>
+const screens=[
+ ["home","1. Home","fanverse.com"],
+ ["shop","2. Shop by Fandom","fanverse.com/shop"],
+ ["preorder","3. Pre-order Campaigns","fanverse.com/preorder"],
+ ["link","4. Link-to-Order","fanverse.com/link-to-order"],
+ ["go","5. Group Order","fanverse.com/group-order"],
+ ["orders","6. My Orders","fanverse.com/my/orders"],
+ ["wh","7. My Warehouse","fanverse.com/my/warehouse"],
+ ["track","8. Order Tracking","fanverse.com/track/FV-26-08812"],
+ ["second","9. Second-hand Shop","fanverse.com/second-hand"],
+ ["bid","10. Bidding Shop","fanverse.com/bidding"],
+ ["guide","11. Fan Guide","fanverse.com/fan-guide"],
+ ["account","12. My Account","fanverse.com/my/account"]
+];
+const tabs=document.getElementById('tabs');
+screens.forEach(([id,label])=>{
+  const b=document.createElement('button');b.className='tab';b.textContent=label;b.dataset.id=id;
+  b.onclick=()=>show(id);tabs.appendChild(b);
+});
+const navMap={home:'home',shop:'shop',preorder:'preorder',link:'link',go:'go',second:'second',bid:'bid',guide:'guide'};
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id==='s-'+id));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.id===id));
+  document.querySelectorAll('#topnav a').forEach(a=>a.classList.toggle('act',a.dataset.nav===id));
+  const sc=screens.find(s=>s[0]===id);
+  document.getElementById('urlbar').textContent='https://'+sc[2];
+}
+document.querySelectorAll('#topnav a').forEach(a=>{a.onclick=e=>{e.preventDefault();show(a.dataset.nav);}});
+show('home');
+</script>
+</body>
+</html>
